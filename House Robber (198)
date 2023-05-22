@@ -1,0 +1,28 @@
+class Solution {
+public:
+// Bottom Top Approch Tabulation
+    int solveTab(vector<int>&nums)
+    {
+        int n=nums.size();
+        int include=0,exclude=0;
+        vector<int> dp(n,0);  // step 1 Creating a dp
+        dp[0]=nums[0];        // Step 2 Initialization of dp[0] to first elementt of nums;
+
+        for(int i=1;i<n;i++)     // Starting a loop from 1 as we already have an elemnt in dp. 
+        {                           
+            include=nums[i];     //if we include the second elemnt of nums[i] 
+            if(i>1) include+=dp[i-2]; 
+            exclude=dp[i-1]+0;    // if we exclude the element of nums then we will not add it 
+
+            dp[i]=max(include,exclude);
+        }
+        return dp[n-1];  // returning element at last index of dp.
+    }
+
+      int rob(vector<int>& nums) 
+      {
+
+          return solveTab(nums);
+        
+    }
+};
