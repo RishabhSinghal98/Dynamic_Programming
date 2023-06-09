@@ -23,14 +23,21 @@ int minimumcoins(vector<int>&coins,int n)
 	if(dp[n]==INT_MAX) return -1;
 	
 	else return dp[n];
-	
-			
-	
 }
 int main()
 {
-	vector<int> coins={7,5,1};
-	int n=18;
+	int size,num,n;
+	vector<int> coins;
+	cout<<"Enter Size of Array"<<endl;
+	cin>>size;
+	cout<<"Enter Array Elements"<<endl;
+	for(int i=0;i<size;i++)
+	{
+	    cin>>num;
+		coins.push_back(num);
+	}
+	cout<<"Enter Total Amount"<<endl;
+	cin>>n;
 	
 	int ans=minimumcoins(coins,n);
 	if(ans==-1) cout<<"No Minimum Number of coins";
