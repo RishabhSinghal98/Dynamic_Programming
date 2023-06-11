@@ -6,7 +6,7 @@ int find_profit(int index,vector<int>& weight,vector<int> & profit,int capacity,
 { 
      // base case
 	if(index==0) //When I reach at index 0 while moving from right to left
-	{
+	{ 
 		if(weight[0]<=capacity) //If weight of that index is less tha my max_weight than omly i will include it otherwise return 0
 		{
 			return weight[0];
