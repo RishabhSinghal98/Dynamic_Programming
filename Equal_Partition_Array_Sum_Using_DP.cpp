@@ -13,7 +13,7 @@ int solvepartition(int index,vector<int>&nums,int target,vector<vector<int>>& dp
 	if(dp[index][target]!=-1) return dp[index][target]; // step 3
 	
 	int include=solvepartition(index+1,nums,target-nums[index],dp);
-    int exclude=solvepartition(index+1,nums,target-0,dp);
+        int exclude=solvepartition(index+1,nums,target-0,dp);
 	
 	 return dp[index][target]=include or exclude; // step 2 store ans in dp
 	
